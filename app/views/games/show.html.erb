@@ -1,0 +1,19 @@
+<% if !flash.empty? %>
+  <% flash.keys.each do |k| %>
+      <div class="<%= k %>">
+          <%= flash[k] %>
+      </div>
+  <% end %>
+<% end %>
+<%= @game.streak %>
+<%= print_problem %>
+
+<%= form_tag "#{@game.id}/check_answer" do %>
+	
+	<%= label_tag 'answer' %>
+	<%= text_field_tag 'answer' %>
+
+	<%= hidden_field_tag 'problem_solution', @game.solution %>
+
+	<%= submit_tag 'Enter' %>
+<% end %>

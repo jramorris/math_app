@@ -1,0 +1,11 @@
+<% if !flash.empty? %>
+  <% flash.keys.each do |k| %>
+      <div class="<%= k %>">
+          <%= flash[k] %>
+      </div>
+  <% end %>
+<% end %>
+
+<%= form_for @game do |f| %>
+	<%= f.submit 'New Game' %>
+<% end %>
