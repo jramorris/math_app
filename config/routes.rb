@@ -1,14 +1,12 @@
 Rails.application.routes.draw do
-  get 'login' => 'sessions#new'
-  post 'login' => 'sessions#create'
-
-  get 'welcome/index'
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   root 'welcome#index'
+  get 'login' => 'sessions#new'
+  post 'login' => 'sessions#create'
+  delete 'logout' => 'sessions#destroy'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -16,6 +14,7 @@ Rails.application.routes.draw do
   # get 'games/new' => 'games#show'
   post 'games/:id' => 'games#show'
   match 'games/:id/check_answer' => 'games#check_answer', via: :post
+  get 'signup' => 'users#new'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
@@ -23,7 +22,6 @@ Rails.application.routes.draw do
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
   resources :games
-  get 'signup' => 'users#new'
   resources :users
   
   # Example resource route with options:
