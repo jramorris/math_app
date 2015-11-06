@@ -1,10 +1,3 @@
-<% if !flash.empty? %>
-  <% flash.keys.each do |k| %>
-      <div class="<%= k %>">
-          <%= flash[k] %>
-      </div>
-  <% end %>
-<% end %>
 <%= @game.streak %>
 <%= print_problem %>
 

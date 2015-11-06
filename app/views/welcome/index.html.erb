@@ -9,9 +9,10 @@
   <% end %>
 <% end %>
 
-<%= link_to 'New Game', new_game_path %>
-<%= link_to 'Signup', signup_path %>
-<%= link_to 'Login', login_path %>
 <% if current_user %>
+	<%= link_to 'New Game', new_game_path %>
 	<%= link_to 'Logout', logout_path, method: 'delete' %>
+<% else %>
+	<%= link_to 'Login', login_path %>
+	<%= link_to 'Signup', signup_path %>
 <% end %>

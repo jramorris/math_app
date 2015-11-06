@@ -1,7 +1,9 @@
 class GamesController < ApplicationController
 	def new
 		@game = Game.new
+		@game.update(user_id: current_user.id)
 		@game.save
+		
 		redirect_to @game
 	end
 
@@ -26,6 +28,6 @@ class GamesController < ApplicationController
 	private
 
 	def game_params
-		params.require(:game).permit(:streak)
+		params.require(:game).permit(:streak, :user_id)
 	end
 end
