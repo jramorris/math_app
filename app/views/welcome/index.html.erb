@@ -1,14 +1,6 @@
 <h1>Lern Mth</h1>
 <p>is fun.</p>
 
-<% if !flash.empty? %>
-  <% flash.keys.each do |k| %>
-      <div class="<%= k %>">
-          <%= flash[k] %>
-      </div>
-  <% end %>
-<% end %>
-
 <% if current_user %>
 	<%= link_to 'New Game', new_game_path %>
 	<%= link_to 'Logout', logout_path, method: 'delete' %>

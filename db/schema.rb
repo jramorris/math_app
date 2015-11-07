@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151106181333) do
+ActiveRecord::Schema.define(version: 20151106192242) do
 
   create_table "games", force: :cascade do |t|
     t.integer  "streak",     default: 0
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
     t.integer  "user_id"
+    t.boolean  "open",       default: true
   end
 
   add_index "games", ["user_id"], name: "index_games_on_user_id"
