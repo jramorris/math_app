@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151106192242) do
+ActiveRecord::Schema.define(version: 20151107183601) do
 
   create_table "games", force: :cascade do |t|
     t.integer  "streak",     default: 0
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20151106192242) do
     t.integer  "high_score",      default: 0
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
+    t.string   "username"
   end
 
 end
