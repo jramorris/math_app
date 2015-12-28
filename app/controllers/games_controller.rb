@@ -22,7 +22,7 @@ class GamesController < ApplicationController
 	def check_answer
 		@game = Game.find(params[:id])
 
-		if params[:answer] == params[:problem_solution]
+		if @game.compare(params[:answer], params[:problem_solution])
 			flash[:success] = 'Correct!'
 			@game.increment_streak
 			redirect_to game_path(@game)

@@ -9,4 +9,8 @@ module Problem
 	def solution
 		@x * @y
 	end
+
+	def compare(arg1, arg2)
+		arg1 == arg2
+	end
 end
