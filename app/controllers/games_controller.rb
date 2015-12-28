@@ -1,6 +1,6 @@
 class GamesController < ApplicationController
 	before_filter :require_user
-	
+
 	def new
 		@game = Game.new
 		@game.update(user_id: current_user.id)
@@ -11,11 +11,11 @@ class GamesController < ApplicationController
 
 	def show
 		@game = Game.find(params[:id])
-		if @game.open != true
+		if @game.open?
+			@game.new_problem
+		else
 			flash[:alert] = "Oops, you've stumbled into a closed game"
 			redirect_to root_path
-		else
-			@game.new_problem
 		end
 	end
 
@@ -27,7 +27,7 @@ class GamesController < ApplicationController
 			@game.increment_streak
 			redirect_to game_path(@game)
 		else
-			@game.update(open: false)
+			@game.close
 			@game.user.update_highscore(@game.streak)
 			flash[:alert] = 'Wrong...'
 			redirect_to root_path
