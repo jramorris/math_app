@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   def require_user
     unless current_user
     	redirect_to login_path
-      flash[:alert] = "You must be logged in to access this feature"
+      flash[:alert] = "You must be logged in to access that feature"
     end
   end
 end

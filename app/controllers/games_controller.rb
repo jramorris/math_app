@@ -1,5 +1,6 @@
 class GamesController < ApplicationController
 	before_filter :require_user
+	
 	def new
 		@game = Game.new
 		@game.update(user_id: current_user.id)
