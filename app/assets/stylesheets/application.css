@@ -56,3 +56,40 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+/* Headers */
+h1 {
+	font-size: 48px;
+	text-align: center;
+	font-family: helvetica;
+}
+header {
+	padding: 20px;
+}
+
+/* text */
+p {
+	font-family: arial;
+	text-align: center;
+}
+a {
+	text-decoration: none;
+	color: #000;
+}
+
+/* lists */
+ul {
+	display: block;
+}
+li {
+	display: inline;
+}
+
+/* classes */
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
