@@ -8,15 +8,7 @@
 </head>
 <body>
 
-<% if !flash.empty? %>
-  <% flash.keys.each do |k| %>
-      <div class="<%= k %>">
-          <%= flash[k] %>
-      </div>
-  <% end %>
-<% end %>
-
-<header>
+<header class="size">
 	<ul>
 		<% if current_user %>
 			<li class="left"><%= link_to 'New Game', new_game_path %></li>
@@ -27,6 +19,14 @@
 		<% end %>
 	</ul>
 </header>
+
+<% if !flash.empty? %>
+  <% flash.keys.each do |k| %>
+      <div class="<%= k %>">
+          <%= flash[k] %>
+      </div>
+  <% end %>
+<% end %>
 
 <div class="body">
 	<%= yield %>
