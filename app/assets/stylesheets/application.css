@@ -40,6 +40,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+	background-color: #fdfdfd;
 }
 ol, ul {
 	list-style: none;
@@ -62,6 +63,7 @@ h1 {
 	font-size: 48px;
 	text-align: center;
 	font-family: helvetica;
+	color: #222;
 }
 header {
 	padding: 20px;
@@ -88,8 +90,29 @@ li {
 /* classes */
 .left {
 	float: left;
+	padding-left: 60px;
 }
 
 .right {
 	float: right;
+	padding-right: 60px;
+}
+.body {
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+.center_text {
+  text-align: center;
+}
+.text_input {
+	width: 250px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 5px;
+	font-size: 16px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	background-color: #EDFDFE;
+	outline: none;
 }

@@ -1,12 +1,14 @@
 <h1>Login</h1>
-<div>
+<div class="body center_text">
 	<%= form_for :session, url: login_path do |f| %>
 
-		<%= f.label :email %>
-		<%= f.email_field :email %>
-
-		<%= f.label :password %>
-		<%= f.password_field :password %>
+			<p><%= f.label :email %></p>
+			<%= f.email_field :email, class: "text_input" %>
+			<br/>
+			
+			<p><%= f.label :password %></p>
+			<%= f.password_field :password, class: "text_input" %>
+			<br/>
 
 		<%= f.submit %>
 	<% end %>

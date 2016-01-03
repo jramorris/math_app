@@ -1,15 +1,18 @@
 <h1>New User</h1>
 
-<div>
+<div class="body center_text">
 	<%= form_for @user do |f| %>
-		<%= f.label :username %>
-		<%= f.text_field :username %>
+		<p><%= f.label :username %></p>
+		<%= f.text_field :username, class: "text_input" %>
+		<br/>
 
-		<%= f.label :email %>
-		<%= f.email_field :email %>
+		<p><%= f.label :email %></p>
+		<%= f.email_field :email, class: "text_input" %>
+		<br/>
 
-		<%= f.label :password %>
-		<%= f.password_field :password %>
+		<p><%= f.label :password %></p>
+		<%= f.password_field :password, class: "text_input" %>
+		<br/>
 
 		<%= f.submit %>
 
