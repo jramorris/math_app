@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
 
 		if @user && @user.authenticate(params[:session][:password])
 	  	session[:user_id] = @user.id
-	  	flash[:success] = "welcome #{@user.email}"
+	  	flash[:success] = "we missed you, #{@user.username}"
 	  	redirect_to root_path
 		else
 			flash[:alert] = "email & password do not match"
