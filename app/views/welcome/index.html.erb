@@ -4,4 +4,7 @@
 
 <div>
 	<p>is fun.</p>
+	<% if current_user %>
+		<br/><p><%= link_to 'View Profile', user_path(current_user) %></p>
+	<% end %>
 </div>

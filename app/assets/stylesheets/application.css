@@ -98,7 +98,9 @@ li {
 	float: left;
 	padding-left: 60px;
 }
-
+.center {
+	float: center;
+}
 .right {
 	float: right;
 	padding-right: 60px;
