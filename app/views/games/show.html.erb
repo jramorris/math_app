@@ -1,12 +1,14 @@
-<%= @game.streak %>
-<%= print_problem %>
+<div class="center_text">
 
-<%= form_tag "#{@game.id}/check_answer" do %>
-	
-	<%= label_tag 'answer' %>
-	<%= text_field_tag 'answer' %>
+	<h3><%= print_problem + "?" %></h3><br/>
 
-	<%= hidden_field_tag 'problem_solution', @game.solution %>
+	<%= form_tag "#{@game.id}/check_answer" do %>
+		<%= text_field_tag 'answer', nil, class: "text_input center_text" %><br/>
 
-	<%= submit_tag 'Enter' %>
-<% end %>
+		<%= hidden_field_tag 'problem_solution', @game.solution %>
+
+		<%= submit_tag 'Submit', class: 'button' %>
+	<% end %>
+</div>
+
+
