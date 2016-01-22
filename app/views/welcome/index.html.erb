@@ -3,8 +3,8 @@
 </header>
 
 <div>
-	<p>is fun.</p>
+	<p>is fun.</p><br/>
 	<% if user_signed_in? %>
-		<br/><p><%#= link_to 'View Profile', user_path(current_user) %></p>
+		<p><%= link_to 'View Profile', user_path(current_user) %></p>
 	<% end %>
 </div>

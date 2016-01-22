@@ -3,7 +3,7 @@
 	<h3><%= print_problem + "?" %></h3><br/>
 
 	<%= form_tag "#{@game.id}/check_answer" do %>
-		<%= text_field_tag 'answer', nil, class: "text_input center_text" %><br/>
+		<%= text_field_tag 'answer', nil, class: "text_input center_text", autofocus: true %><br/>
 
 		<%= hidden_field_tag 'problem_solution', @game.solution %>
 
