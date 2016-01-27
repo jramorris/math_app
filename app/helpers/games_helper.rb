@@ -1,5 +1,9 @@
 module GamesHelper
-	def print_problem
-		p "#{@game.x} x #{@game.y}"
+	def print_problem(problem_type)
+		if problem_type == 'multiplication'
+			p "#{@game.x} x #{@game.y}"
+		else
+			p"#{@game.x} / #{@game.y}"
+		end
 	end
 end

@@ -3,10 +3,17 @@ class GamesController < ApplicationController
 
 	def new
 		@game = Game.new
-		@game.update(user_id: current_user.id)
-		@game.save
-		
-		redirect_to @game
+	end
+
+	def create
+		@game = Game.new(game_params)
+		if @game.save
+			@game.update(user_id: current_user.id)
+			redirect_to @game
+		else
+			flash[:alert] = "something went wrong! try making another game..."
+			redirect_to :new
+		end
 	end
 
 	def show
@@ -37,6 +44,6 @@ class GamesController < ApplicationController
 	private
 
 	def game_params
-		params.require(:game).permit(:streak, :user_id)
+		params.require(:game).permit(:streak, :user_id, :game_type)
 	end
 end

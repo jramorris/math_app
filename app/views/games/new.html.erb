@@ -1,4 +1,10 @@
 <%= form_for @game do |f| %>
+
+	<%= f.label :game_type, 'multiplication' %>
+	<%= f.radio_button :game_type, 'multiplication' %>
+	<%= f.label :game_type, 'division' %>
+	<%= f.radio_button :game_type, 'division' %>
+
 	<% f.hidden_field :user_id, value: current_user.id %>
 	<%= f.submit 'New Game' %>
 <% end %>
