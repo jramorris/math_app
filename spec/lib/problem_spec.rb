@@ -13,8 +13,16 @@ RSpec.describe Problem do
 	end
 
 	describe ".solution" do
-		it "multiplies x and y" do
-			expect(dummy_class.solution).to eq dummy_class.x * dummy_class.y
+		context "(multiplication)" do	
+			it "multiplies x and y" do
+				expect(dummy_class.solution('multiplication')).to eq dummy_class.x * dummy_class.y
+			end
+		end
+
+		context "(division)" do
+			it "divides x and y" do
+				expect(dummy_class.solution('division')).to eq dummy_class.x / dummy_class.y
+			end
 		end
 	end
 end
