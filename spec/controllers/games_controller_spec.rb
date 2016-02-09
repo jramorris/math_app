@@ -9,14 +9,20 @@ RSpec.describe GamesController do
 	end
 
 	describe ".new" do
-		it "creates game with user_id equal to current_user" do
-			fail
-		end
-
-		it "creates and redirects to game" do
+		it "creates empty game" do
 			get :new
 
-			expect(response).to redirect_to '/games/1'
+			expect(response).to render_template :new
+		end
+	end
+
+	describe ".create" do
+
+		it "makes" do
+			attributes = { game: Game.new }
+			post :create, game: attributes
+
+			expect(response).to redirect_to game_path(Game.last)
 		end
 	end
 

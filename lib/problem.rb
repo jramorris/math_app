@@ -6,8 +6,12 @@ module Problem
 		@y = rand(1..12)
 	end
 
-	def solution
-		@x * @y
+	def solution(problem_type)
+		if problem_type == 'multiplication'
+			@x * @y
+		else
+			@x
+		end
 	end
 
 	def compare(arg1, arg2)

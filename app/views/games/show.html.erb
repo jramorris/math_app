@@ -1,11 +1,11 @@
 <div class="center_text">
 
-	<h3><%= print_problem + "?" %></h3><br/>
+	<h3><%= print_problem(@game.game_type) + "?" %></h3><br/>
 
 	<%= form_tag "#{@game.id}/check_answer" do %>
 		<%= text_field_tag 'answer', nil, class: "text_input center_text", autofocus: true %><br/>
 
-		<%= hidden_field_tag 'problem_solution', @game.solution %>
+		<%= hidden_field_tag 'problem_solution', @game.solution(@game.game_type) %>
 
 		<%= submit_tag 'Submit', class: 'button' %>
 	<% end %>
